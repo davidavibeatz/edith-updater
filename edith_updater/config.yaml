@@ -1,0 +1,39 @@
+name: Edith Updater
+version: "1.0.0"
+slug: edith_updater
+description: Aggiornamenti verificati e backup automatici per Edith ML
+url: https://github.com/davidavibeatz/edith-updater
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+startup: application
+boot: auto
+init: false
+hassio_api: true
+homeassistant_api: true
+hassio_role: manager
+map:
+  - type: homeassistant_config
+    read_only: false
+    path: /homeassistant
+  - type: all_addon_configs
+    read_only: false
+    path: /addon_configs
+  - type: backup
+    read_only: false
+    path: /backup
+options:
+  repository: davidavibeatz/edith-home-ml
+  github_token: ""
+  appdaemon_slug: a0d7b954_appdaemon
+  appdaemon_config_dir: a0d7b954_appdaemon
+  poll_seconds: 5
+schema:
+  repository: str
+  github_token: password
+  appdaemon_slug: str
+  appdaemon_config_dir: str
+  poll_seconds: int(2,60)
