@@ -2,6 +2,7 @@
 set -Eeuo pipefail
 
 POLL_SECONDS="$(bashio::config 'poll_seconds')"
+UPDATE_ON_START="$(bashio::config 'update_on_start')"
 SWITCH_ENTITY="input_boolean.home_ml_aggiorna"
 API="http://supervisor/core/api"
 
@@ -14,6 +15,11 @@ set_switch_off() {
 }
 
 bashio::log.info "Edith Updater pronto"
+
+if bashio::var.true "${UPDATE_ON_START}"; then
+    bashio::log.info "Controllo iniziale aggiornamenti"
+    /update.sh || bashio::log.error "Aggiornamento iniziale non completato"
+fi
 
 while true; do
     STATE="$(curl -fsS \

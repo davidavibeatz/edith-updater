@@ -12,5 +12,8 @@ Ogni avvio dell'add-on:
 6. riavvia AppDaemon e Home Assistant;
 7. esegue rollback automatico in caso di configurazione non valida.
 
+Alla prima installazione `update_on_start` applica automaticamente l'ultima
+release, creando anche gli helper Home Assistant necessari.
+
 Per un repository privato, inserire nelle opzioni un token GitHub con solo
 permesso di lettura sul repository Edith.

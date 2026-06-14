@@ -1,5 +1,5 @@
 name: Edith Updater
-version: "1.0.0"
+version: "1.0.1"
 slug: edith_updater
 description: Aggiornamenti verificati e backup automatici per Edith ML
 url: https://github.com/davidavibeatz/edith-updater
@@ -31,9 +31,11 @@ options:
   appdaemon_slug: a0d7b954_appdaemon
   appdaemon_config_dir: a0d7b954_appdaemon
   poll_seconds: 5
+  update_on_start: true
 schema:
   repository: str
   github_token: password
   appdaemon_slug: str
   appdaemon_config_dir: str
   poll_seconds: int(2,60)
+  update_on_start: bool
