@@ -15,5 +15,8 @@ Ogni avvio dell'add-on:
 Alla prima installazione `update_on_start` applica automaticamente l'ultima
 release, creando anche gli helper Home Assistant necessari.
 
+La versione 1.0.2 corregge la lettura delle opzioni al primo avvio e attende
+silenziosamente che Home Assistant crei lo switch di aggiornamento.
+
 Per un repository privato, inserire nelle opzioni un token GitHub con solo
 permesso di lettura sul repository Edith.

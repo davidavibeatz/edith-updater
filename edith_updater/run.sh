@@ -22,7 +22,7 @@ if bashio::var.true "${UPDATE_ON_START}"; then
 fi
 
 while true; do
-    STATE="$(curl -fsS \
+    STATE="$(curl -sS \
         -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" \
         "${API}/states/${SWITCH_ENTITY}" \
         | jq -r '.state // "off"' 2>/dev/null || printf 'off')"

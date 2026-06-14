@@ -10,7 +10,7 @@ WORK_ROOT="${EDITH_WORK_ROOT:-/tmp/edith-updater}"
 if [[ -n "${EDITH_TEST_OPTIONS:-}" ]]; then
     OPTIONS="${EDITH_TEST_OPTIONS}"
 else
-    OPTIONS="$(bashio::config)"
+    OPTIONS="$(cat /data/options.json)"
 fi
 
 REPOSITORY="$(jq -r '.repository' <<<"${OPTIONS}")"
