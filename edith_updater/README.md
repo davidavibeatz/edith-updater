@@ -18,5 +18,8 @@ release, creando anche gli helper Home Assistant necessari.
 La versione 1.0.2 corregge la lettura delle opzioni al primo avvio e attende
 silenziosamente che Home Assistant crei lo switch di aggiornamento.
 
+La versione 1.0.3 gestisce il riavvio tramite Supervisor senza interpretare
+come errore la normale chiusura della connessione durante il riavvio.
+
 Per un repository privato, inserire nelle opzioni un token GitHub con solo
 permesso di lettura sul repository Edith.

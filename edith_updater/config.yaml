@@ -1,5 +1,5 @@
 name: Edith Updater
-version: "1.0.2"
+version: "1.0.3"
 slug: edith_updater
 description: Aggiornamenti verificati e backup automatici per Edith ML
 url: https://github.com/davidavibeatz/edith-updater

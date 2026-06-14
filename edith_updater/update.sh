@@ -209,11 +209,9 @@ curl -fsS -o /dev/null -X POST \
         fail "Riavvio AppDaemon fallito"
     }
 
-curl -fsS -o /dev/null -X POST \
-    -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" \
-    -H "Content-Type: application/json" \
-    --data '{}' \
-    http://supervisor/core/api/services/homeassistant/restart \
-    || fail "Riavvio Home Assistant fallito"
+set_status "completato" "Edith ${VERSION} aggiornato con successo; riavvio Home Assistant"
 
-set_status "completato" "Edith ${VERSION} aggiornato con successo"
+curl -sS --max-time 15 -o /dev/null -X POST \
+    -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" \
+    http://supervisor/core/restart \
+    || log "Riavvio richiesto; connessione Supervisor chiusa durante l'operazione"
